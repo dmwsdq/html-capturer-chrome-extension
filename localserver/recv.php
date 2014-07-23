@@ -1,10 +1,8 @@
 <?php
 $html = $_POST['html'];
-$result = strlen($html);
-echo ($result);
-error_log($html);
+$folder = "./Captured/";
 
-$myFile = date("Y-m-j H-i-s").".htm";
+$myFile = $folder.date("Y-m-j H-i-s").".htm";
 $fh = fopen($myFile, 'a') or die("can't open file");
 $stringData = $html."\n";
 fwrite($fh, $stringData);
