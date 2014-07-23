@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "HTML Capturer",
+  "version": "0.0.2",
+  "description": "This extension captures HTML and POST to local server. Please set recv.php and get it run on your local server.",
+  "permissions": [
+    "http://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js" : ["jquery.min.js","contentscript.js"],
+      "run at":"document_end"
+    }
+  ],
+  "background":{
+    "scripts":["jquery.min.js","eventPage.js"],
+    "persistent": true
+  }
+  
+}
+
